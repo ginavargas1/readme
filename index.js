@@ -1,6 +1,7 @@
 //fs library package
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown')
 
 const README = (response) => 
 `# ${response.title}
@@ -86,10 +87,10 @@ inquirer.prompt([
 
 ])
 .then ((response) => {
-   
-    console.log(response)
+    const data = generateMarkdown(response);
+    console.log(data)
 
-      fs.writeFile('README.md', (err) => 
-       err ? console.log(err) : console.log('ReadMe Generator Worked!')  
-      );   
+    //   fs.writeFile('README.md', (err) => 
+    //    err ? console.log(err) : console.log('ReadMe Generator Worked!')  
+    //   );   
 });
