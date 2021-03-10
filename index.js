@@ -1,33 +1,11 @@
 //fs library package
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown')
+const util = require('util');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-const README = (response) => 
-`# ${response.title}
-## Table of Contents
-*[Description](#description)
-*[Installation](#installation)
-*[Usage](#usage)
-*[License](#license)
-*[Contribution](#contribution)
-*[Tests](#tests)
-*[Questions](#questions)
-## Description
-${response.description}
-## Installation
-${response.install}
-## Usage
-${response.usage}
-## License
-This application has the following License: ${response.license}
-## Contributing 
-${response.contributing}
-## Tests
-${response.test}
-`;
 
-inquirer.prompt([
+const questions = [
     {
         type: 'input',
         name: 'title',
@@ -35,7 +13,7 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'decription',
+        name: 'description',
         message: 'Please write a short description of your project.'
     },
     {
@@ -59,7 +37,7 @@ inquirer.prompt([
         message: 'Add test instructions.'
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: 'Would you like to add a license?',
         choices: ['None', 'Apache', 'MIT', 'BSD']
@@ -85,12 +63,27 @@ inquirer.prompt([
         message: 'What is your GitHub username?'
     },
 
-])
-.then ((response) => {
-    const data = generateMarkdown(response);
-    console.log(data)
+];
 
-    //   fs.writeFile('README.md', (err) => 
-    //    err ? console.log(err) : console.log('ReadMe Generator Worked!')  
-    //   );   
-});
+   function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function(err){
+        console.log(fileName)
+        console.log(data)
+            if (err) {
+            return console.log(err)
+            } else {
+        console.log("Congrats! README is generated.")
+        }
+    })
+   }
+
+    function init() {
+        inquirer.prompt(questions)
+        .then(function(data) {
+            writeToFile("README.md", generateMarkdown(data));
+            console.log(data)
+        })
+    }
+
+    // function call to initialize app
+    init();
