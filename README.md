@@ -10,13 +10,13 @@
   8. [Questions](#questions)
 
   ## Description
-  This will generate a ReadMe 
+  This will generate a readMe file 
 
   ## Installation
-  npm 1
+  npm i 
 
   ## Usage
-  This is for demo purposes
+  This is for demo purposes 
 
   ## License
   This application has the following License: MIT
@@ -32,7 +32,7 @@
 
   Los Angeles
   
-  ginavargas89
+  https://www.linkedin.com/in/ginavargas89/
   
   ## GitHub
   https://github.com/ginavargas1

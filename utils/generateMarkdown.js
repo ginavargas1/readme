@@ -59,7 +59,7 @@ function generateMarkdown(data) {
   ## License
   This application has the following License: ${data.license}
 
-  ## Contributing
+  ## Contribution
   ${data.contribution}
   
   ## Tests
@@ -69,7 +69,7 @@ function generateMarkdown(data) {
   ${data.name}
 
   ${data.location}
-  
+
   ${data.linkd}
   
   ## GitHub
