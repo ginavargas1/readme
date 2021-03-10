@@ -1,4 +1,4 @@
-# rm
+# ReadMe Generator
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Table of Contents
   1. [Description](#description)
@@ -10,30 +10,30 @@
   8. [Questions](#questions)
 
   ## Description
-  asdf
+  This will generate a ReadMe 
 
   ## Installation
-  adfdfas
+  npm 1
 
   ## Usage
-  sdfasdf
+  This is for demo purposes
 
   ## License
   This application has the following License: MIT
 
   ## Contributing
-  sdfa
+  no contribution 
   
   ## Tests
-  dasfad
+  npm run test
 
   ## Questions
-  asdfads
+  Gina Vargas
 
-  asdfa
+  Los Angeles
   
-  adf
+  ginavargas89
   
   ## GitHub
-  https://github.com/df
+  https://github.com/ginavargas1
   
